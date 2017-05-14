@@ -1,6 +1,6 @@
 # travis-signed-apk-release-example
 
-[![Build Status](https://travis-ci.org/Shingyx/signed-apk-release-test.svg?branch=master)](https://travis-ci.org/Shingyx/signed-apk-release-test)
+[![Build Status](https://travis-ci.org/Shingyx/travis-signed-apk-release-example.svg?branch=master)](https://travis-ci.org/Shingyx/travis-signed-apk-release-example)
 
 
 ## Description

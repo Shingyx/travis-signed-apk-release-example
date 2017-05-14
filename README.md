@@ -1,5 +1,8 @@
 # travis-signed-apk-release-example
 
+[![Build Status](https://travis-ci.org/Shingyx/signed-apk-release-test.svg?branch=master)](https://travis-ci.org/Shingyx/signed-apk-release-test)
+
+
 ## Description
 
 This is a sample project which demonstrates automatically creating signed APKs as GitHub releases through Travis CI using an encrypted tarball containing keystore related files. This means that Travis CI can use your keystores to sign APKs without having to commit plaintext passwords and a raw keystore file to the repository.

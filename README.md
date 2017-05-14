@@ -11,7 +11,9 @@ To build the signed APK of this project, it requires the files `keystore.propert
 
 Note that `keystore.properties` and `test-keystore.jks` are not committed to the repository. This is because they are zipped inside a tarball which is encrypted using Travis's public key assigned to this repository. The encrypted tarball is represented by the file `archive.tar.gz.enc`.
 
-For details on how to encrypt files for only Travis CI to access, see https://docs.travis-ci.com/user/encrypting-files
+For details on how to encrypt files for only Travis CI to access, see https://docs.travis-ci.com/user/encrypting-files/
+
+For details on deploying GitHub releases using Travis CI, see https://docs.travis-ci.com/user/deployment/releases/
 
 
 ## Building the project locally

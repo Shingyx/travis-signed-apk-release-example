@@ -11,6 +11,8 @@ android:
   - android-sdk-license-.+
 
 before_install:
+- openssl aes-256-cbc -K $encrypted_c80205960ed2_key -iv $encrypted_c80205960ed2_iv -in archive.tar.gz.enc -out archive.tar.gz -d
+- tar -xzvf archive.tar.gz
 - chmod +x gradlew
 - mkdir "$ANDROID_HOME/licenses" || true
 - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
@@ -21,7 +23,7 @@ deploy:
   provider: releases
   api_key:
     secure: keM4yR/2Kl1AbEKxeoG0gZBfbK3A71PI29UJewvNDmB9pYTR1yBcWwreX+99Mvn785f6kDgCev132Ur6066FB5QnSkE2nfoXCvRqQQS1Fa3JNtqYGLmuAv1ZprmFoNSWuVnuYZ8leqxbabrG9/6A/ojMEefC5Gh5FEIwKH0t4qcYOwlCHJRHY2u+Y3el+8n/pHd0hT+ttLMh6wBzA0gOzKefuhpdIg4JlA8RoGSK2lVCgnBa4rHZiaXRQKQ7HZ3DuCR/usDD0rUp4CmdZh6c91i2LBIC7chWRyfLrOSAwcZRm8aH1HZ1nrAyOTa38c/bQPvgpqT8NDCgGwiWe0Ajmnt+qfnthp0lKrEl6zwSiJL84sNYYR+qOwtCvWA4CMFm+srwLNMSGaIsjLsuKNfAhig7XBeKxjMwSPXRQd4nFFz88PNR4Doe8jYgr5GJcAC0xHB4q1tT0zWs3s/Tf0far6IF8EEIS8sW29EgmvHneB9+dHMadUvQ9nymZO7VFr2JGaE8CtipoyiN1zR/mU6vLQVIQKiM2UD1lnYXeZz0N8G/Vk7FubB/43cN89gL3VuJrFjP+/qedgafISq7Rd0mL4JW2nOix4vhp22+CWHGix/5zWkNui1lm72KX9mPz7bCPU5O/BMa2Tf9HO9vUH87UnkaUMAN88Gw95uLFIgaSMY=
-  file: app/build/outputs/apk/app-debug.apk
+  file: app/build/outputs/apk/app-release.apk
   skip_cleanup: true
   on:
     repo: Shingyx/signed-apk-release-test

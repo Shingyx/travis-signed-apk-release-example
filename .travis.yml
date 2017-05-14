@@ -11,7 +11,7 @@ android:
   - android-sdk-license-.+
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_c80205960ed2_key -iv $encrypted_c80205960ed2_iv -in archive.tar.gz.enc -out archive.tar.gz -d
+- openssl aes-256-cbc -K $encrypted_2330f03d7182_key -iv $encrypted_2330f03d7182_iv -in archive.tar.gz.enc -out archive.tar.gz -d
 - tar -xzvf archive.tar.gz
 - chmod +x gradlew
 - mkdir "$ANDROID_HOME/licenses" || true

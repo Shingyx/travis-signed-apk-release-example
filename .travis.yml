@@ -39,7 +39,7 @@ deploy:
   file: app/build/outputs/apk/app-release.apk
   skip_cleanup: true
   on:
-    repo: Shingyx/signed-apk-release-test
+    repo: Shingyx/travis-signed-apk-release-example
     tags: true
 
 notifications:

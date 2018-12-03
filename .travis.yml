@@ -3,28 +3,29 @@ jdk: oraclejdk8
 
 android:
   components:
-  - tools
+    - tools
   licenses:
-  - android-sdk-license-.+
+    - android-sdk-license-.+
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_2330f03d7182_key -iv $encrypted_2330f03d7182_iv -in archive.tar.gz.enc -out archive.tar.gz -d
-- tar -xzvf archive.tar.gz
-- chmod +x gradlew
-- mkdir "$ANDROID_HOME/licenses" || true
-- echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+  - openssl aes-256-cbc -K $encrypted_2330f03d7182_key -iv $encrypted_2330f03d7182_iv -in archive.tar.gz.enc -out archive.tar.gz -d
+  - tar -xzvf archive.tar.gz
+  - chmod +x gradlew
+  - mkdir "$ANDROID_HOME/licenses" || true
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
 
 before_script:
   - echo yes | ${ANDROID_HOME}tools/bin/sdkmanager "tools"
   - echo yes | ${ANDROID_HOME}tools/bin/sdkmanager "platform-tools"
-  - echo yes | ${ANDROID_HOME}tools/bin/sdkmanager "build-tools;25.0.3"
+  - echo yes | ${ANDROID_HOME}tools/bin/sdkmanager "build-tools;28.0.3"
   - echo yes | ${ANDROID_HOME}tools/bin/sdkmanager "platforms;android-25"
 
-script: "./gradlew clean build"
+script:
+  - ./gradlew clean build
 
 before_cache:
-- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
 cache:
   directories:
